@@ -1,0 +1,19 @@
+<div class="container perfect-centering card">
+    <div>
+        <h1>OTP Form</h1>
+        <form (ngSubmit)="onFormSubmit()" class="card-body">
+            <div class="form-group">
+                <label for="emailField">Email</label>
+                <input type="text" pattern="^\S+@\S+\.\S+$" class="form-control" id="emailField" required
+                    [(ngModel)]="email" name="emailField" #emailField="ngModel">
+                <div [hidden]="emailField.valid || emailField.pristine" class="alert alert-danger">
+                    Email is required
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

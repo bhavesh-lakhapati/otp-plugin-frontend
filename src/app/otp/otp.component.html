@@ -1,0 +1,16 @@
+<div class="container perfect-centering card">
+    <div>
+        <h1>OTP Form</h1>
+        <form (ngSubmit)="onFormSubmit()" class="card-body" #otpForm>
+            <div class="form-group">
+                <label for="otpField">OTP</label>
+                <input type="number" maxlength="4" class="form-control" id="otpField" required [(ngModel)]="otp" name="otpField"
+                    #otpField="ngModel">
+                <div [hidden]="otpField.error || otpField.pristine" class="alert alert-danger">
+                    Invalid OTP
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
